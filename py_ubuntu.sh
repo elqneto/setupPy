@@ -68,7 +68,7 @@ wget https://update.code.visualstudio.com/latest/linux-deb-x64/stable
 sudo gdebi stable
 sudo apt install -y libasound2 libatk1.0-0 libcairo2 libcups2 libdbus-1-3 libgbm1 libgconf-2-4 libgdk-pixbuf2.0-0 libgtk-3-0 libx11-xcb1 libxkbfile1 libxss1 libxtst6 libnss3 libxcomposite1
 
-17. Instala última versão estável do PyCharm (e pacotes auxiliares)
+# 17. Instala última versão estável do PyCharm (e pacotes auxiliares)
 ########### 
 # PyCharm #
 ###########
