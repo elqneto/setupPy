@@ -1,39 +1,39 @@
 # setupPy
 
-Script para instalar o Python do Ubuntu, um ambiente virtual, o [VS Code](https://code.visualstudio.com/), o [PyCharm](https://www.jetbrains.com/pycharm/) e bibliotecas de ciência de dados e de LLMs no Ubuntu 26.04 LTS e em versões mais novas.
+Script to install Ubuntu's Python, a virtual environment, [VS Code](https://code.visualstudio.com/), [PyCharm](https://www.jetbrains.com/pycharm/), and libraries for data science and LLMs on Ubuntu 26.04 LTS and newer.
 
-O PyCharm Community e o PyCharm Professional foram unificados num só PyCharm. O núcleo que era gratuito continua gratuito, incluindo Jupyter. A primeira execução ativa um teste de 30 dias da edição Pro.
+PyCharm Community and PyCharm Professional are now one PyCharm product. The core that used to be free stays free, including Jupyter. The first launch starts a 30-day Pro trial.
 
-## Uso
+## Usage
 
-No Ubuntu 26.04.1 LTS ou mais recente:
+On Ubuntu 26.04.1 LTS or newer:
 
 ```bash
 chmod +x py_ubuntu.sh
 ./py_ubuntu.sh
 ```
 
-O script pede senha de administrador e precisa de internet. Ele usa o Python que já vem no Ubuntu, cria o ambiente em `~/venvs/ds` e instala as versões atuais dos pacotes no PyPI. O VS Code passa a ser atualizado pelo repositório da Microsoft. O PyCharm baixado é a versão estável mais recente.
+The script asks for an administrator password and needs internet access. It uses the Python that ships with Ubuntu, creates the environment in `~/venvs/ds`, and installs the current package versions from PyPI. VS Code is then updated from Microsoft's repository. The PyCharm build downloaded is the latest stable release.
 
-A instalação do PyTorch, do PyCharm e das bibliotecas científicas pode levar bastante tempo e vários gigabytes de disco.
+Installing PyTorch, PyCharm, and the scientific libraries can take a long time and several gigabytes of disk space.
 
-Para usar o ambiente depois:
+Activate the environment afterwards with:
 
 ```bash
 source ~/venvs/ds/bin/activate
 ```
 
-## O que o script troca
+## What the script changes
 
-- Deixa de compilar o Python 3.10 e usa o Python atual do Ubuntu.
-- Instala os pacotes no ambiente virtual, em vez de misturá-los com o Python do sistema.
-- Troca o `fbprophet` pelo `prophet` e o cliente antigo do Google pelo `google-genai`.
-- Inclui bibliotecas para usar LLMs (`openai`, `anthropic`, `google-genai`, `litellm`, `ollama`, `transformers`, `langchain`, `langgraph`) e para criá-los ou ajustá-los (`torch`, `datasets`, `accelerate`, `peft`, `trl`, `bitsandbytes`).
-- Instala o PyCharm unificado no lugar do Community 2021.3.3.
-- Não instala o OpenJDK 11 para o IDE. O PyCharm traz o próprio runtime. O OpenJDK 21 fica disponível para o PySpark e o H2O.
+- Stops compiling Python 3.10 and uses Ubuntu's current Python.
+- Installs packages in the virtual environment instead of mixing them with the system Python.
+- Replaces `fbprophet` with `prophet` and the old Google client with `google-genai`.
+- Adds libraries for using LLMs (`openai`, `anthropic`, `google-genai`, `litellm`, `ollama`, `transformers`, `langchain`, `langgraph`) and for creating or fine-tuning them (`torch`, `datasets`, `accelerate`, `peft`, `trl`, `bitsandbytes`).
+- Installs unified PyCharm instead of Community 2021.3.3.
+- Does not install OpenJDK 11 for the IDE. PyCharm ships its own runtime. OpenJDK 21 is available for PySpark and H2O.
 
-Pacotes que ainda não publicam wheel para o Python desta versão do Ubuntu, como o TensorFlow no Python 3.14, aparecem no final da execução e não interrompem o resto da instalação.
+Packages that do not yet publish a wheel for this Ubuntu release's Python, such as TensorFlow on Python 3.14, are listed at the end of the run and do not stop the rest of the installation.
 
-## Licença
+## License
 
-MIT. Veja [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
